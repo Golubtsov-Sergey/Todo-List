@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bgColorWhite: white;
+$bgColorViolet:#889DEA;
+$color: #889DEA;
+
+@mixin radius {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: -1;
+}
+
+body {
+    background-color: rgb(224, 224, 224);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+header, 
+form {
+    min-height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+    background-color: $bgColorViolet;
+    flex-direction: column;
+    padding-bottom: 72px;
+    border-bottom-right-radius: 41px;
+
+    &::after {
+        bottom: 0;
+        right: 0;
+        background-color: $bgColorWhite;
+
+        @include radius;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .select {
+        width: 100%;
+
+        .filter-todo {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .select-item {
+            cursor: pointer;
+            max-width: max-content;
+            font-size: 12px;
+        }
+
+        span {
+            display: block;
+            pointer-events: none;
+            text-align: center;
+            font-size: 56px;
+        }
+    }
+}
+
+form {
+    min-height: 20vh;
+    background-color: $bgColorWhite;
+    position: relative;
+    border-top-left-radius: 41px;
+
+    &::before {
+        top: 0;
+        left: 0;
+        background-color: $bgColorViolet;
+
+        @include radius;
+    }
+
+    textarea,
+    button {
+        padding: 0.5rem;
+        font-size: 2rem;
+        border: none;
+        background: $bgColorWhite;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        color: $bgColorWhite;
+        background-color: #88EAA9;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $bgColorWhite;
+            background-color: $bgColorViolet;
+        }
+    }
+
+    .todo-button {
+        position: absolute;
+        top: -25px;
+        width: 48px;
+        height: 48px;
+        border-radius: 11px;
+        transform: rotate(45deg);   
+    }
+
+    .fa-plus {
+        transform: rotate(45deg); 
+    }
+
+    .todo-input {
+        border-bottom: 1px solid $color;
+        width: 80%;
+        font-size: 14px;
+        line-height: 22px;
+        height: 50px;
+    }
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    margin: 0 auto;
+    min-height: 15rem;
+
+    .todo-list {
+        list-style: none;
+        width: 100%;
+        background: $bgColorWhite;
+    }
+
+    .todo {
+        margin: 0.5rem auto;
+        border-bottom: 1px solid $color;
+        color: black;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s ease;
+        width: 80%;
+
+        li {
+            flex: 1;
+        }
+
+        .checboxCompleted {
+            background-color: $bgColorViolet;
+        }
+    }
+
+    .fall {
+        transform: translateY(8rem) rotate(20deg);
+        opacity: 0;
+    }
+
+    .fa-check,
+    .fa-trash-alt,
+    .fa-edit {
+        pointer-events: none;
+    }
+    
+    .complete-btn {
+        background-color: $bgColorWhite;
+        border: 1px solid $color;
+        cursor: pointer;
+        font-size: 1rem;
+        color: white;
+        outline: none;
+        align-self: flex-start;
+    }
+
+    .todo-item {
+        padding: 0rem 0.5rem;
+        min-height: 0.5rem;
+        font-size: 0;
+    }
+
+    .completed {
+        textarea {
+            text-decoration: line-through;
+            opacity: 0.3;
+        }
+    }
+
+    .item-text {
+        width: 100%;
+        background-color: $bgColorWhite;
+        border: none;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    .item-date {
+        font-size: 12px;
+        line-height: 16px;
+        color: $color;
+        text-decoration: none;
+    }
+
+    .trash-btn,
+    .edit-btn {
+        background-color: $bgColorWhite;
+        border: none;
+        padding: 0 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #AFAFAF;
+        outline: none;
+
+        &:hover {
+            color: $color;
+        }
+    }
+}

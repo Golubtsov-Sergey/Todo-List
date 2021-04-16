@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0e0e0;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header,
+form {
+  min-height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+header {
+  position: relative;
+  background-color: #889DEA;
+  flex-direction: column;
+  padding-bottom: 72px;
+  border-bottom-right-radius: 41px;
+}
+header::after {
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: -1;
+}
+header h1 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+header .select {
+  width: 100%;
+}
+header .select .filter-todo {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+header .select .select-item {
+  cursor: pointer;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+  font-size: 12px;
+}
+header .select span {
+  display: block;
+  pointer-events: none;
+  text-align: center;
+  font-size: 56px;
+}
+
+form {
+  min-height: 20vh;
+  background-color: white;
+  position: relative;
+  border-top-left-radius: 41px;
+}
+form::before {
+  top: 0;
+  left: 0;
+  background-color: #889DEA;
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: -1;
+}
+form textarea,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form textarea:focus,
+form button:focus {
+  outline: none;
+}
+form button {
+  color: white;
+  background-color: #88EAA9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  color: white;
+  background-color: #889DEA;
+}
+form .todo-button {
+  position: absolute;
+  top: -25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 11px;
+  transform: rotate(45deg);
+}
+form .fa-plus {
+  transform: rotate(45deg);
+}
+form .todo-input {
+  border-bottom: 1px solid #889DEA;
+  width: 80%;
+  font-size: 14px;
+  line-height: 22px;
+  height: 50px;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+  margin: 0 auto;
+  min-height: 15rem;
+}
+.todo-container .todo-list {
+  list-style: none;
+  width: 100%;
+  background: white;
+}
+.todo-container .todo {
+  margin: 0.5rem auto;
+  border-bottom: 1px solid #889DEA;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+  width: 80%;
+}
+.todo-container .todo li {
+  flex: 1;
+}
+.todo-container .todo .checboxCompleted {
+  background-color: #889DEA;
+}
+.todo-container .fall {
+  transform: translateY(8rem) rotate(20deg);
+  opacity: 0;
+}
+.todo-container .fa-check,
+.todo-container .fa-trash-alt,
+.todo-container .fa-edit {
+  pointer-events: none;
+}
+.todo-container .complete-btn {
+  background-color: white;
+  border: 1px solid #889DEA;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  align-self: flex-start;
+}
+.todo-container .todo-item {
+  padding: 0rem 0.5rem;
+  min-height: 0.5rem;
+  font-size: 0;
+}
+.todo-container .completed textarea {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+.todo-container .item-text {
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+.todo-container .item-text:focus {
+  border: none;
+  outline: none;
+}
+.todo-container .item-date {
+  font-size: 12px;
+  line-height: 16px;
+  color: #889DEA;
+  text-decoration: none;
+}
+.todo-container .trash-btn,
+.todo-container .edit-btn {
+  background-color: white;
+  border: none;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #AFAFAF;
+  outline: none;
+}
+.todo-container .trash-btn:hover,
+.todo-container .edit-btn:hover {
+  color: #889DEA;
+}
